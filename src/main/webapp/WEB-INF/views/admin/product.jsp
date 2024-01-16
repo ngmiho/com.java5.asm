@@ -70,39 +70,41 @@
 					modelAttribute="account"
 					class="form-horizontal templatemo-container" role="form">
 					<div class="form-inner">
+						<i class="fa fa-times"></i>
+							<div class="media margin-bottom-30">
+								<div class="media-left padding-right-25">
+									<a href="#"> <img
+										class="media-object img-circle templatemo-img-bordered"
+										src="images/person.jpg" alt="Sunset">
+									</a>
+								</div>
+								<div class="media-body">
+									<h2 class="media-heading text-uppercase blue-text">Black Coffee</h2>
+									<p>Type: Coffee</p>
+								</div>
+							</div>
 						<div class="form-group">
 							<div class="col-md-6">
-								<label for="first_name" class="control-label">First Name</label>
+								<label for="first_name" class="control-label">Name</label>
 								<form:input path="firstName" class="form-control" />
 								<form:errors path="firstName" style="color:red;" />
 							</div>
 							<div class="col-md-6">
-								<label for="first_name" class="control-label">Last Name</label>
+								<label for="first_name" class="control-label">Price</label>
 								<form:input path="lastName" class="form-control" />
 								<form:errors path="lastName" style="color:red;" />
 							</div>
 						</div>
 						<div class="form-group">
-							<div class="col-md-12">
-								<label for="username" class="control-label">Email</label>
-								<form:password path="email" class="form-control" />
-								<form:errors path="email" style="color:red;" />
+							<div class="col-md-6">
+								<label for="first_name" class="control-label">Type</label>
+								<form:input path="firstName" class="form-control" />
+								<form:errors path="firstName" style="color:red;" />
 							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-md-6 templatemo-radio-group">
-								<div class="mb-3">
-									<label class="form-label">Gender</label><br> 
-									<label class="radio-inline"> 
-										<form:radiobutton path="gender" value="0" label="Male" checked="true" />
-									</label> 
-									<label class="radio-inline"> 
-										<form:radiobutton path="gender" value="1" label="Female" />
-									</label> 
-									<label class="radio-inline"> 
-										<form:radiobutton path="gender" value="2" label="Other" />
-									</label>
-								</div>
+							<div class="col-md-6">
+								<label for="first_name" class="control-label">Image</label>
+								<form:input path="lastName" class="form-control" />
+								<form:errors path="lastName" style="color:red;" />
 							</div>
 						</div>
 						<div class="form-group">

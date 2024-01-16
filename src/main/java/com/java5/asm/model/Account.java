@@ -13,11 +13,20 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Account {
 	
+	public enum Role {
+		Admin,
+		User
+	}
+	
 	@NotBlank(message = "{NotBlank.account.email}")
 	@Email(message = "{Email.account.email}")
 	private String email;
 	@NotBlank(message = "{NotBlank.account.password}")
 	private String password;
+	@NotBlank(message = "{NotBlank.account.phone}")
+	private String phone;
+	@NotBlank(message = "{NotBlank.account.address}")
+	private String address;
 	@NotBlank(message = "{NotBlank.account.firstName}")
 	private String firstName;
 	@NotBlank(message = "{NotBlank.account.lastName}")
@@ -27,7 +36,7 @@ public class Account {
 	@NotNull(message = "{NotBlank.account.gender}")
 	private Integer gender;
 	@NotNull(message = "{NotNull.account.admin}")
-	private Boolean admin;
+	private Role role;
 	@NotNull(message = "{NotBlank.account.active}")
 	private Boolean active;
 }

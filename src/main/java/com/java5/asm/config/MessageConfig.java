@@ -1,4 +1,4 @@
-package com.java5.asm;
+package com.java5.asm.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;

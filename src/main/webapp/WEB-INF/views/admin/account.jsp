@@ -28,6 +28,8 @@
 									<td><a href="" class="white-text templatemo-sort-by">User
 											Name <span class="caret"></span>
 									</a></td>
+									<td><a href="" class="white-text templatemo-sort-by">Phone <span class="caret"></span>
+									<td><a href="" class="white-text templatemo-sort-by">Address <span class="caret"></span>
 									<td><a href="" class="white-text templatemo-sort-by">Email
 											<span class="caret"></span>
 									</a></td>
@@ -46,6 +48,8 @@
 									<td>John</td>
 									<td>Smith</td>
 									<td>Male</td>
+									<td>0900000001</td>
+									<td>TP.HCM</td>
 									<td>@jS</td>
 									<td>js@company.com</td>
 									<td>Admin</td>
@@ -59,6 +63,8 @@
 									<td>John</td>
 									<td>Smith</td>
 									<td>Male</td>
+									<td>0900000002</td>
+									<td>TP.HCM</td>
 									<td>@jS</td>
 									<td>js@company.com</td>
 									<td>Admin</td>
@@ -125,6 +131,17 @@
 										<form:input path="email" class="form-control" />
 										<form:errors path="email" style="color:red;" />
 									</div>
+								</div><div class="form-group">
+									<div class="col-md-6">
+										<label for="phone" class="control-label">Phone</label>
+										<form:input path="phone" class="form-control" />
+										<form:errors path="phone" style="color:red;" />
+									</div>
+									<div class="col-md-6">
+										<label for="address" class="control-label">Address</label>
+										<form:input path="address" class="form-control" />
+										<form:errors path="address" style="color:red;" />
+									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-md-6 templatemo-radio-group">
@@ -146,10 +163,10 @@
 											<label class="form-label">Role</label><br> 
 											<label
 												class="radio-inline"> 
-												<form:radiobutton path="admin" value="0" label="Admin" checked="true" />
+												<form:radiobutton path="role" value="0" label="Admin" checked="true" />
 											</label> 
 											<label class="radio-inline"> 
-												<form:radiobutton path="admin" value="1" label="User"/>
+												<form:radiobutton path="role" value="1" label="User"/>
 											</label> 
 										</div>
 									</div>

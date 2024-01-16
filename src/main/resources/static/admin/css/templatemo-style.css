@@ -298,7 +298,7 @@ footer { padding: 15px; }
 .pagination>.active>a, 
 .pagination>.active>a:focus, 
 .pagination>.active>a:hover {
-	background-color: #39ADB4;
+	background-color: rgb(255, 128, 0);
 	border-color: #E9E8E8;
 }
 .table { margin-bottom: 0; }
@@ -439,7 +439,7 @@ input[type="radio"]:checked + label span {
 .templatemo-link:hover { color: #39ADB4; }
 .templatemo-overflow-hidden { overflow: hidden; }
 .templatemo-user-table thead {
-	background-color: #39ADB4;
+	background-color: rgb(192, 192, 192);
 	color: white;
 }
 .panel>.table-responsive:last-child>.table:last-child, .panel>.table:last-child {

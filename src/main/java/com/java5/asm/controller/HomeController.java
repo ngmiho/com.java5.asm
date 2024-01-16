@@ -123,6 +123,17 @@ public class HomeController {
 		
 		return "otp";
 	}
+	@GetMapping("/confirm-otp")
+	public String getConfirmOTP(Model model) {
+		
+		return "otp";
+	}
+	@PostMapping("/confirm-otp")
+	public String postConfirmOTP(@Valid @ModelAttribute("account") Account account,
+			BindingResult result, Model model) {
+		
+		return "login";
+	}
 	
 	@RequestMapping("/change-password")
 	public String rqChangePassword(@Valid @ModelAttribute("account") Account account,
@@ -166,6 +177,27 @@ public class HomeController {
 	public String postAdminAccount(Model model) {
 		model.addAttribute("jsp", "account.jsp");
 		model.addAttribute("active", "2");
+		
+		return "admin/index";
+	}
+	
+	@GetMapping("/admin/product")
+	public String getAdminProduct(@Valid @ModelAttribute("account") Account account,
+			BindingResult result, Model model) {
+		model.addAttribute("jsp", "product.jsp");
+		model.addAttribute("active", "3");
+		
+		if (result.hasErrors()) {
+			model.addAttribute("message", "Invalid information!");
+		} else {
+			model.addAttribute("message", "Valid information!");
+		}
+		return "admin/index";
+	}
+	@PostMapping("/admin/product")
+	public String postAdminProduct(Model model) {
+		model.addAttribute("jsp", "product.jsp");
+		model.addAttribute("active", "3");
 		
 		return "admin/index";
 	}
