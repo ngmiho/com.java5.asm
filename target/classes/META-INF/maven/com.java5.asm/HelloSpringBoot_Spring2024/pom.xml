@@ -60,11 +60,14 @@
 			<artifactId>hibernate-validator</artifactId>
 		</dependency>
 
+		<!--
+		https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
 		<dependency>
-			<groupId>com.nguumiho</groupId>
-			<artifactId>coffee-shope-website</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>8.0.1.Final</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -75,12 +78,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-	<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
-	<dependency>
-		<groupId>org.hibernate.validator</groupId>
-		<artifactId>hibernate-validator</artifactId>
-		<version>8.0.1.Final</version>
-	</dependency>
+
 
 </project>
