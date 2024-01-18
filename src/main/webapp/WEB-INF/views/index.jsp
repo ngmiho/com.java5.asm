@@ -51,6 +51,7 @@
                 <li><a href="/best-sell" class="${active == '2' ? 'active' : ''}">Best Sell</a></li>
                 <li><a href="/menu" class="${active == '3' ? 'active' : ''}">Menu</a></li>
                 <li><a href="/contact" class="${active == '4' ? 'active' : ''}">Contact</a></li>
+                <li><a href="/admin/index" class="${active == '5' ? 'active' : ''}">Manager</a></li>
                 <li><a href="/login" >Login</a></li>
                 <li><a href="/sign-up">Sign Up</a></li>
               </ul>
