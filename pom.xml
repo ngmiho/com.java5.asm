@@ -60,6 +60,8 @@
 			<artifactId>hibernate-validator</artifactId>
 		</dependency>
 
+		<!--
+		https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
 		<dependency>
 			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
@@ -77,7 +79,10 @@
 		</plugins>
 	</build>
 
+<<<<<<< HEAD
 	<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
 
+=======
+>>>>>>> 1f85d29ef29d27d74fb8288a81519ea7f85c6999
 
 </project>
