@@ -79,10 +79,5 @@
 		</plugins>
 	</build>
 
-<<<<<<< HEAD
-	<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
-
-=======
->>>>>>> 1f85d29ef29d27d74fb8288a81519ea7f85c6999
 
 </project>
