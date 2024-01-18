@@ -1,7 +1,7 @@
 package com.java5.asm.controller;
 
-public class HelloWorldDuyanh {
+public class HelloWorldHoang {
 	public static void main(String[] args) {
-		System.out.println("hello World Hoang");
+		System.out.println("hello World ABCCCCC");
 	}
 }
