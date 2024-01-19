@@ -20,20 +20,7 @@ import jakarta.validation.Valid;
 @Controller
 public class HomeController {
 	
-	@GetMapping("/index")
-	public String getIndex(Model model) {
-		model.addAttribute("jsp", "home.jsp");
-		model.addAttribute("active", "1");
-		
-		return "index";
-	}
-	@PostMapping("/index")
-	public String postIndex(Model model) {
-		model.addAttribute("jsp", "home.jsp");
-		model.addAttribute("active", "1");
-		
-		return "index";
-	}
+	
 	
 	@GetMapping("/best-sell")
 	public String getTodaySpecial(Model model) {

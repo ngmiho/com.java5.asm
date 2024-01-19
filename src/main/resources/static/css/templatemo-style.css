@@ -362,7 +362,7 @@ ul {
   margin-top: 30px;  
   margin-bottom: 80px;
 }
-.tm-popular-item-img { margin-left: 3px; }
+.tm-popular-item-img { margin-left: 3px; width: 285px; height: 200px;}
 .tm-popular-items-container {
   display: -webkit-box;
   display: -webkit-flex;
