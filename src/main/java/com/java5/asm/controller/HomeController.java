@@ -21,7 +21,6 @@ import jakarta.validation.Valid;
 public class HomeController {
 	
 	
-	
 	@GetMapping("/best-sell")
 	public String getTodaySpecial(Model model) {
 		model.addAttribute("jsp", "best-sell.jsp");
