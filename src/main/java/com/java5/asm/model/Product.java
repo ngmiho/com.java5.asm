@@ -18,16 +18,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "product")
+@Table(name = "Products")
 public class Product implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
-	@ManyToOne @JoinColumn(name = "typeId")
-	private Type type;
+	private String type;
 	private String description;
-	private double price;
+	private Double price;
 	private String image;
-	private boolean action;
-	private User user;
+	private Boolean action;
 }

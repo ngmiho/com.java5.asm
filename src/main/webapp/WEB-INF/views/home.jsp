@@ -45,7 +45,7 @@
             <div class="tm-hr-container"><hr class="tm-hr"></div>
           </div>
           <div class="col-lg-12 tm-popular-items-container">
-          	<c:forEach value="product" item="bestsells"> 
+          	<c:forEach var="product" items="bestsells"> 
 	            <div class="tm-popular-item">
 	              <img src="img/${product.image}" alt="Popular" class="tm-popular-item-img">
 	              <div class="tm-popular-item-description">
