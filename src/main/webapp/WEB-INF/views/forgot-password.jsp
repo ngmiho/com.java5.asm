@@ -38,7 +38,7 @@
 			            <input type="submit" value="Send OTP" class="btn btn-warning">
 	                    <br><br>
 	                    <a href="/login">Login</a> |
-	                    <a href="/sign-in">Sign Up</a> |
+	                    <a href="/sign-up">Sign Up</a> |
 	                    <a href="/index">Home</a>
 			          </div>
 			        </div>

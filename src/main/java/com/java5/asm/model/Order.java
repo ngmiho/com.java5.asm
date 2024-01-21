@@ -31,12 +31,12 @@ public class Order implements Serializable {
 	private Integer id;
 	private Double total;
 	@Temporal(TemporalType.DATE)
-	private Date exportDate = new Date();
+	private Date exportdate = new Date();
 	@ManyToOne
 	@JoinColumn(name = "AccountId")
 	Account account;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "order")
-	List<OrderDetail> orderDetails;
+	List<OrderDetail> orderdetails;
 }

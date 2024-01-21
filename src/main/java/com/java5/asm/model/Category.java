@@ -29,8 +29,8 @@ public class Category implements Serializable {
 	private String name;
 	private Double quantity;
 	@Temporal(TemporalType.DATE)
-	private Date enterDate = new Date();
+	private Date enterdate = new Date();
 	@Temporal(TemporalType.DATE)
-	private Date exportDate;
+	private Date exportdate;
 	private String supplier;
 }

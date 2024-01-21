@@ -42,11 +42,11 @@ public class Account implements Serializable {
 	@NotBlank(message = "{NotBlank.account.address}")
 	private String address;
 	@NotBlank(message = "{NotBlank.account.firstName}")
-	private String firstName;
+	private String firstname;
 	@NotBlank(message = "{NotBlank.account.lastName}")
-	private String lastName;
+	private String lastname;
 	@NotBlank(message = "{NotBlank.account.userName}")
-	private String userName;
+	private String username;
 	@NotNull(message = "{NotBlank.account.gender}")
 	private Integer gender;
 	@NotNull(message = "{NotNull.account.role}")

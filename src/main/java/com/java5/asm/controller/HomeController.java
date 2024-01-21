@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.java5.asm.model.Account;
+import com.java5.asm.model.Product;
 
 import jakarta.validation.Valid;
 
@@ -73,6 +74,7 @@ public class HomeController {
 			model.addAttribute("message", "Invalid information!");
 		} else {
 			model.addAttribute("message", "Valid information!");
+			return "admin/index";
 		}
 		return "login";
 	}
@@ -160,7 +162,8 @@ public class HomeController {
 		return "admin/index";
 	}
 	@PostMapping("/admin/account")
-	public String postAdminAccount(Model model) {
+	public String postAdminAccount(@Valid @ModelAttribute("account") Account account,
+			BindingResult result, Model model) {
 		model.addAttribute("jsp", "account.jsp");
 		model.addAttribute("active", "2");
 		
@@ -168,7 +171,8 @@ public class HomeController {
 	}
 	
 	@GetMapping("/admin/product")
-	public String getAdminProduct(@Valid @ModelAttribute("account") Account account,
+	public String getAdminProduct(@Valid @ModelAttribute("product") Product product,
+			@Valid @ModelAttribute("account") Account account,
 			BindingResult result, Model model) {
 		model.addAttribute("jsp", "product.jsp");
 		model.addAttribute("active", "3");
@@ -181,7 +185,9 @@ public class HomeController {
 		return "admin/index";
 	}
 	@PostMapping("/admin/product")
-	public String postAdminProduct(Model model) {
+	public String postAdminProduct(@Valid @ModelAttribute("product") Product product,
+			@Valid @ModelAttribute("account") Account account,
+			BindingResult result, Model model) {
 		model.addAttribute("jsp", "product.jsp");
 		model.addAttribute("active", "3");
 		

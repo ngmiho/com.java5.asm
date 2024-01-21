@@ -67,7 +67,7 @@
 					</div>
 				</div>
 				<form:form action="/admin/product/save" method="post"
-					modelAttribute="account"
+					modelAttribute="product"
 					class="form-horizontal templatemo-container" role="form">
 					<div class="form-inner">
 						<i class="fa fa-times"></i>
@@ -85,26 +85,26 @@
 							</div>
 						<div class="form-group">
 							<div class="col-md-6">
-								<label for="first_name" class="control-label">Name</label>
-								<form:input path="firstName" class="form-control" />
-								<form:errors path="firstName" style="color:red;" />
+								<label class="control-label">Name</label>
+								<form:input path="name" class="form-control" />
+								<form:errors path="name" style="color:red;" />
 							</div>
 							<div class="col-md-6">
-								<label for="first_name" class="control-label">Price</label>
-								<form:input path="lastName" class="form-control" />
-								<form:errors path="lastName" style="color:red;" />
+								<label class="control-label">Price</label>
+								<form:input path="price" class="form-control" />
+								<form:errors path="price" style="color:red;" />
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-md-6">
-								<label for="first_name" class="control-label">Type</label>
-								<form:input path="firstName" class="form-control" />
-								<form:errors path="firstName" style="color:red;" />
+								<label class="control-label">Type</label>
+								<form:input path="type" class="form-control" />
+								<form:errors path="type" style="color:red;" />
 							</div>
 							<div class="col-md-6">
-								<label for="first_name" class="control-label">Image</label>
-								<form:input path="lastName" class="form-control" />
-								<form:errors path="lastName" style="color:red;" />
+								<label class="control-label">Image</label>
+								<form:input path="image" class="form-control" />
+								<form:errors path="image" style="color:red;" />
 							</div>
 						</div>
 						<div class="form-group">
