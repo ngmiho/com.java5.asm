@@ -134,19 +134,6 @@ public class HomeController {
 		return "change-password";
 	}
 	
-	@RequestMapping("/admin/index")
-	public String rqAdminIndex(@Valid @ModelAttribute("account") Account account,
-			BindingResult result, Model model){
-		model.addAttribute("jsp", "info.jsp");
-		model.addAttribute("active", "1");
-		
-		if (result.hasErrors()) {
-			model.addAttribute("message", "Invalid information!");
-		} else {
-			model.addAttribute("message", "Valid information!");
-		}
-		return "admin/index";
-	}
 	
 	@GetMapping("/admin/account")
 	public String getAdminAccount(@Valid @ModelAttribute("account") Account account,

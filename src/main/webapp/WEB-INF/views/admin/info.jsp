@@ -12,20 +12,20 @@
 							<div class="form-inner">
 								<div class="form-group">
 									<div class="col-md-6">
-										<label for="first_name" class="control-label">First Name</label>
+										<label class="control-label">First Name</label>
 										<form:input path="firstname" class="form-control" />
 										<form:errors path="firstname" style="color:red;" />
 									</div>
 									<div class="col-md-6">
-										<label for="first_name" class="control-label">Last Name</label>
+										<label class="control-label">Last Name</label>
 										<form:input path="lastname" class="form-control" />
 										<form:errors path="lastname" style="color:red;" />
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-md-12">
-										<label for="username" class="control-label">Email</label>
-										<form:password path="email" class="form-control" />
+										<label class="control-label">Email</label>
+										<form:input path="email" class="form-control" />
 										<form:errors path="email" style="color:red;" />
 									</div>
 								</div>
