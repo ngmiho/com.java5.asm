@@ -110,21 +110,21 @@
 									<div class="col-md-6">
 										<label for="first_name" class="control-label">First
 											Name</label>
-										<form:input path="firstName" class="form-control" />
-										<form:errors path="firstName" style="color:red;" />
+										<form:input path="firstname" class="form-control" />
+										<form:errors path="firstname" style="color:red;" />
 									</div>
 									<div class="col-md-6">
 										<label for="first_name" class="control-label">Last Name</label>
-										<form:input path="lastName" class="form-control" />
-										<form:errors path="lastName" style="color:red;" />
+										<form:input path="lastname" class="form-control" />
+										<form:errors path="lastname" style="color:red;" />
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-md-6">
 										<label for="first_name" class="control-label">User
 											Name</label>
-										<form:input path="firstName" class="form-control" />
-										<form:errors path="firstName" style="color:red;" />
+										<form:input path="username" class="form-control" />
+										<form:errors path="username" style="color:red;" />
 									</div>
 									<div class="col-md-6">
 										<label for="email" class="control-label">Email</label>

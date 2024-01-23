@@ -24,7 +24,6 @@
 	<div class="container">
 		<div class="col-md-12">
 			<h1 class="margin-bottom-15" style="color:white;">Password Reset</h1>
-			<form class="form-horizontal templatemo-forgot-password-form templatemo-container" role="form" action="#" method="post">	
 				<div class="form-group">
 		          <div class="col-md-12">
 		          	Please enter password information.

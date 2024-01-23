@@ -38,7 +38,33 @@
               <img src="img/1.jpg" alt="Image" class="img-circle img-thumbnail">  
             </div>              
           </div>            
+<<<<<<< HEAD
         </section>          
+=======
+        </section>         
+        <section class="tm-section tm-section-margin-bottom-0 row">
+          <div class="col-lg-12 tm-section-header-container">
+            <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="img/logo.png" alt="Logo" class="tm-site-logo"> Popular Items</h2>
+            <div class="tm-hr-container"><hr class="tm-hr"></div>
+          </div>
+          <div class="col-lg-12 tm-popular-items-container">
+          	<c:forEach var="product" items="${bestsells}" varStatus="status">
+			    <c:if test="${status.index < 3}">
+			        <div class="tm-popular-item">
+		              <img src="img/drink/${product.image}" alt="Popular" class="tm-popular-item-img">
+		              <div class="tm-popular-item-description">
+		                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">a</span>mericano</h3><hr class="tm-popular-item-hr">
+		                <p>${product.description}</p>
+		                <div class="order-now-container">
+		                  <a href="/best-sell" class="order-now-link tm-handwriting-font">Order Now</a>
+		                </div>
+		              </div>              
+		            </div>
+			    </c:if>
+            </c:forEach>
+          </div>          
+        </section>
+>>>>>>> e79480ce6b3869555424bab14f47c750425c5838
         <section class="tm-section row">
           <div class="col-lg-12 tm-section-header-container">
             <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="img/logo.png" alt="Logo" class="tm-site-logo"> Today's Special</h2>
@@ -48,7 +74,7 @@
             <div class="tm-special-container-left"> <!-- left -->
               <div class="tm-special-item">
                 <div class="tm-special-img-container">
-                  <img src="img/special-1.jpg" alt="Special" class="tm-special-img img-responsive">  
+                  <img src="img/drink/${bestsells[0].image}" style="width:520px;height:400px;" alt="Special" class="tm-special-img img-responsive">  
                   <a href="#">
                     <div class="tm-special-description">
                       <h3 class="tm-special-title">Donec pede justo</h3>
@@ -62,7 +88,7 @@
               <div>
                 <div class="tm-special-item">
                   <div class="tm-special-img-container">
-                    <img src="img/special-2.jpg" alt="Special" class="img-responsive">  
+                    <img src="img/drink/${bestsells[1].image}" style="width:360px;height:207px;" alt="Special" class="img-responsive">  
                     <a href="#">
                       <div class="tm-special-description">
                         <h3 class="tm-special-title">Etiam sit amet</h3>
@@ -75,7 +101,7 @@
               <div class="tm-special-container-lower">
                 <div class="tm-special-item">
                   <div class="tm-special-img-container">
-                    <img src="img/special-3.jpg" alt="Special" class="img-responsive">  
+                    <img src="img/drink/${bestsells[2].image}" style="width:155px;height:155px;" alt="Special" class="img-responsive">  
                     <a href="#">
                       <div class="tm-special-description">
                         <p>Vivamus elementum</p>
@@ -85,7 +111,7 @@
                 </div>
                 <div class="tm-special-item">
                   <div class="tm-special-img-container">
-                    <img src="img/special-4.jpg" alt="Special" class="img-responsive">  
+                    <img src="img/drink/${bestsells[3].image}" style="width:155px;height:155px;" alt="Special" class="img-responsive">  
                     <a href="#">
                       <div class="tm-special-description">
                         <p>Quisque rutrum.</p>
@@ -119,7 +145,7 @@
                   <li>Maecenas nec odio et ante tincidunt tempus.</li> 
                   <li>Donec vitae sapien ut libero ventenatis faucibus.</li> 
                 </ol>
-                <a href="#" class="tm-more-button margin-top-30">Read More</a>    
+                <a href="/menu" class="tm-more-button margin-top-30">Read More</a>    
               </div>
             </div>
           </div>          

@@ -1,7 +1,7 @@
+com\java5\asm\model\service\ParamService.class
 com\java5\asm\Application.class
 com\java5\asm\controller\HelloWorldHungPhan.class
 com\java5\asm\controller\HelloWorldNguyen.class
-com\java5\asm\model\User$admin.class
 com\java5\asm\model\Account.class
 com\java5\asm\controller\HelloWorldHoang.class
 com\java5\asm\controller\HelloWorldDuyanh.class
@@ -9,7 +9,10 @@ com\java5\asm\controller\SayByeDuyAnh.class
 com\java5\asm\model\Product.class
 com\java5\asm\model\Account$Role.class
 com\java5\asm\config\MessageConfig.class
+com\java5\asm\dao\ProductDAO.class
 com\java5\asm\ServletInitializer.class
+com\java5\asm\model\service\SessionService.class
 com\java5\asm\controller\HomeController.class
 com\java5\asm\model\User.class
 com\java5\asm\model\Type.class
+com\java5\asm\model\service\ProductService.class

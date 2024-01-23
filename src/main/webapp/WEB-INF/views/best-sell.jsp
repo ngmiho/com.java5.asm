@@ -37,66 +37,18 @@ http://www.templatemo.com/tm-466-cafe-house
             <div class="tm-hr-container"><hr class="tm-hr"></div>
           </div>
           <div class="col-lg-12 tm-popular-items-container">
-            <div class="tm-popular-item">
-              <img src="img/popular-1.jpg" alt="Popular" class="tm-popular-item-img">
-              <div class="tm-popular-item-description">
-                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">a</span>mericano</h3><hr class="tm-popular-item-hr">
-                <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. sed ipsum.</p>
-                <div class="order-now-container">
-                  <a href="#" class="order-now-link tm-handwriting-font">Order Now</a>
-                </div>
-              </div>              
-            </div>
-            <div class="tm-popular-item">
-              <img src="img/popular-2.jpg" alt="Popular" class="tm-popular-item-img">
-              <div class="tm-popular-item-description">
-                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">c</span>appuccino</h3><hr class="tm-popular-item-hr">
-                <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. sed ipsum.</p>
-                <div class="order-now-container">
-                  <a href="#" class="order-now-link tm-handwriting-font">Order Now</a>
-                </div>
-              </div>              
-            </div>
-            <div class="tm-popular-item">
-              <img src="img/popular-3.jpg" alt="Popular" class="tm-popular-item-img">
-              <div class="tm-popular-item-description">
-                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">m</span>ocha</h3><hr class="tm-popular-item-hr">
-                <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. sed ipsum.</p>
-                <div class="order-now-container">
-                  <a href="#" class="order-now-link tm-handwriting-font">Order Now</a>
-                </div>
-              </div>              
-            </div>
-            <div class="tm-popular-item">
-              <img src="img/popular-1.jpg" alt="Popular" class="tm-popular-item-img">
-              <div class="tm-popular-item-description">
-                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">a</span>mericano</h3><hr class="tm-popular-item-hr">
-                <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. sed ipsum.</p>
-                <div class="order-now-container">
-                  <a href="#" class="order-now-link tm-handwriting-font">Order Now</a>
-                </div>
-              </div>              
-            </div>
-            <div class="tm-popular-item">
-              <img src="img/popular-2.jpg" alt="Popular" class="tm-popular-item-img">
-              <div class="tm-popular-item-description">
-                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">c</span>appuccino</h3><hr class="tm-popular-item-hr">
-                <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. sed ipsum.</p>
-                <div class="order-now-container">
-                  <a href="#" class="order-now-link tm-handwriting-font">Order Now</a>
-                </div>
-              </div>              
-            </div>
-            <div class="tm-popular-item">
-              <img src="img/popular-3.jpg" alt="Popular" class="tm-popular-item-img">
-              <div class="tm-popular-item-description">
-                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">m</span>ocha</h3><hr class="tm-popular-item-hr">
-                <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. sed ipsum.</p>
-                <div class="order-now-container">
-                  <a href="#" class="order-now-link tm-handwriting-font">Order Now</a>
-                </div>
-              </div>              
-            </div>
+            <c:forEach var="product" items="${bestsells}"> 
+	            <div class="tm-popular-item">
+	              <img src="img/drink/${product.image}" alt="Popular" class="tm-popular-item-img">
+	              <div class="tm-popular-item-description">
+	                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">a</span>mericano</h3><hr class="tm-popular-item-hr">
+	                <p>${product.description}</p>
+	                <div class="order-now-container">
+	                  <a href="/best-sell" class="order-now-link tm-handwriting-font">Order Now</a>
+	                </div>
+	              </div>              
+	            </div>
+            </c:forEach>
           </div>       
         </section>
         <section class="tm-section">
