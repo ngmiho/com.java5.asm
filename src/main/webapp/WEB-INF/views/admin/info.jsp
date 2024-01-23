@@ -25,7 +25,7 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<label for="username" class="control-label">Email</label>
-										<form:password path="email" class="form-control" />
+										<form:input path="email" class="form-control" />
 										<form:errors path="email" style="color:red;" />
 									</div>
 								</div>

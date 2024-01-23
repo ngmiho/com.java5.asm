@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter @Setter
+@Getter 
 @NoArgsConstructor
 @AllArgsConstructor
 public class Account {
@@ -20,9 +20,9 @@ public class Account {
 	
 	@NotBlank(message = "{NotBlank.account.email}")
 	@Email(message = "{Email.account.email}")
-	private String email;
+	public String email;
 	@NotBlank(message = "{NotBlank.account.password}")
-	private String password;
+	public String password;
 	@NotBlank(message = "{NotBlank.account.phone}")
 	private String phone;
 	@NotBlank(message = "{NotBlank.account.address}")

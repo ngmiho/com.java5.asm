@@ -29,7 +29,7 @@
         <section class="tm-section row">
           <div class="col-lg-9 col-md-9 col-sm-8">
             <h2 class="tm-section-header gold-text tm-handwriting-font">The Best Coffee for you</h2>
-            <h2>Cafe House</h2>
+            <h2>${email}</h2>
             <p class="tm-welcome-description">Welcome...Welcome!!! This is the place where you will find any kind of drink that we're selling. For detail...</p>
             <a href="/menu" class="tm-more-button margin-top-30">Read More</a> 
           </div>
@@ -39,26 +39,6 @@
             </div>              
           </div>            
         </section>          
-        <section class="tm-section tm-section-margin-bottom-0 row">
-          <div class="col-lg-12 tm-section-header-container">
-            <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="img/logo.png" alt="Logo" class="tm-site-logo"> Popular Items</h2>
-            <div class="tm-hr-container"><hr class="tm-hr"></div>
-          </div>
-          <div class="col-lg-12 tm-popular-items-container">
-          	<c:forEach value="product" item="bestsells"> 
-	            <div class="tm-popular-item">
-	              <img src="img/${product.image}" alt="Popular" class="tm-popular-item-img">
-	              <div class="tm-popular-item-description">
-	                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">a</span>mericano</h3><hr class="tm-popular-item-hr">
-	                <p>${product.description}</p>
-	                <div class="order-now-container">
-	                  <a href="/best-sell" class="order-now-link tm-handwriting-font">Order Now</a>
-	                </div>
-	              </div>              
-	            </div>
-            </c:forEach>
-          </div>          
-        </section>
         <section class="tm-section row">
           <div class="col-lg-12 tm-section-header-container">
             <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="img/logo.png" alt="Logo" class="tm-site-logo"> Today's Special</h2>
