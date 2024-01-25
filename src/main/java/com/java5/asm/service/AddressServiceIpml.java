@@ -8,10 +8,11 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import com.java5.asm.dao.AddressDAO;
 import com.java5.asm.entity.Address;
-
+@Service
 public class AddressServiceIpml implements AddressService {
 	@Autowired
 	AddressDAO addressDAO;
