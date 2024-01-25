@@ -6,7 +6,7 @@
 		          	<h3>Please enter password information.</h3>
 		          </div>
 		        </div>
-		        <form:form action="/forgot-password" method="post" modelAttribute="account"
+		        <form:form action="/forgot-password" method="post" modelAttribute="user"
 			class="form-horizontal templatemo-login-form-2 templatemo-container" role="form">
 		         <div class="form-group">
 		          <div class="col-md-12">

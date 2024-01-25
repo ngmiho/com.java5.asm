@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,7 +34,9 @@ public class Topping implements Serializable {
 	private String name;
 	
 	@NotNull(message = "{NotNull.topping.price}")
+	@Positive(message = "{Positive.topping.price")
 	private Double price;
 	
+	@NotNull(message = "{NotNull.topping.active}")
 	private Boolean active = true;
 }
