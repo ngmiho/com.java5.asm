@@ -28,7 +28,7 @@ public class Image implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(columnDefinition = "nvarchar(255)")
+	@Column(columnDefinition = "nvarchar(60)")
 	private String name;
 	
 	@ManyToOne
