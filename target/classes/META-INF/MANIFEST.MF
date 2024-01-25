@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Build-Jdk-Spec: 19
+=======
+Build-Jdk-Spec: 17
+>>>>>>> 4318131f7895860ebb238f895aeb05afb539217a
 Implementation-Title: HelloSpringBoot_Spring2024
 Implementation-Version: 0.0.1-SNAPSHOT
 Created-By: Maven Integration for Eclipse
