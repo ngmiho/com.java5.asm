@@ -19,25 +19,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-<<<<<<< HEAD
-@Getter 
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Account {
-=======
+@Setter
 @SuppressWarnings("serial")
 @Data
-@Entity 
+@Entity
 @Table(name = "Accounts")
 public class Account implements Serializable {
->>>>>>> e79480ce6b3869555424bab14f47c750425c5838
-	
+
 	public enum Role {
-		Admin,
-		User
+		Admin, User
 	}
-	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@NotBlank(message = "{NotBlank.account.email}")
 	@Email(message = "{Email.account.email}")

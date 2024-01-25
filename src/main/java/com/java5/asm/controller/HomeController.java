@@ -15,11 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.java5.asm.model.Account;
-<<<<<<< HEAD
+
 import com.java5.asm.model.UserDAO;
-=======
+
 import com.java5.asm.model.Product;
->>>>>>> e79480ce6b3869555424bab14f47c750425c5838
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -27,17 +26,12 @@ import jakarta.validation.Valid;
 
 @Controller
 public class HomeController {
-<<<<<<< HEAD
 
 	@Autowired
 	HttpSession session;
 	@Autowired
 	HttpServletRequest request;
 
-=======
-	
-	
->>>>>>> e79480ce6b3869555424bab14f47c750425c5838
 	@GetMapping("/best-sell")
 	public String getTodaySpecial(Model model) {
 		model.addAttribute("jsp", "best-sell.jsp");
@@ -77,7 +71,7 @@ public class HomeController {
 
 		return "index";
 	}
-	
+
 	@RequestMapping("/login")
 	public String rqLogin(@Valid @ModelAttribute("account") Account account, BindingResult result, Model model) {
 		if (result.hasErrors()) {
@@ -151,9 +145,9 @@ public class HomeController {
 		}
 		return "change-password";
 	}
-<<<<<<< HEAD
 
 	@RequestMapping("/admin/index")
+
 	public String rqAdminIndex(@Valid @ModelAttribute("account") Account account, BindingResult result, Model model) {
 		model.addAttribute("jsp", "info.jsp");
 		model.addAttribute("active", "1");
@@ -166,11 +160,8 @@ public class HomeController {
 		return "admin/index";
 	}
 
-=======
-	
-	
->>>>>>> e79480ce6b3869555424bab14f47c750425c5838
 	@GetMapping("/admin/account")
+
 	public String getAdminAccount(@Valid @ModelAttribute("account") Account account, BindingResult result,
 			Model model) {
 		model.addAttribute("jsp", "account.jsp");
@@ -185,8 +176,8 @@ public class HomeController {
 	}
 
 	@PostMapping("/admin/account")
-	public String postAdminAccount(@Valid @ModelAttribute("account") Account account,
-			BindingResult result, Model model) {
+	public String postAdminAccount(@Valid @ModelAttribute("account") Account account, BindingResult result,
+			Model model) {
 		model.addAttribute("jsp", "account.jsp");
 		model.addAttribute("active", "2");
 
@@ -194,14 +185,12 @@ public class HomeController {
 	}
 
 	@GetMapping("/admin/product")
-<<<<<<< HEAD
-	public String getAdminProduct(@Valid @ModelAttribute("account") Account account, BindingResult result,
-			Model model) {
-=======
+
+
 	public String getAdminProduct(@Valid @ModelAttribute("product") Product product,
 			@Valid @ModelAttribute("account") Account account,
 			BindingResult result, Model model) {
->>>>>>> e79480ce6b3869555424bab14f47c750425c5838
+
 		model.addAttribute("jsp", "product.jsp");
 		model.addAttribute("active", "3");
 
@@ -215,8 +204,7 @@ public class HomeController {
 
 	@PostMapping("/admin/product")
 	public String postAdminProduct(@Valid @ModelAttribute("product") Product product,
-			@Valid @ModelAttribute("account") Account account,
-			BindingResult result, Model model) {
+			@Valid @ModelAttribute("account") Account account, BindingResult result, Model model) {
 		model.addAttribute("jsp", "product.jsp");
 		model.addAttribute("active", "3");
 
