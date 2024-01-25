@@ -88,8 +88,8 @@
 							</ul>
 						</div>
 					</div>
-					<form:form action="/admin/index" method="post"
-						modelAttribute="account"
+					<form:form action="/admin/user" method="post"
+						modelAttribute="user"
 						class="form-horizontal templatemo-container" role="form">
 							<i class="fa fa-times"></i>
 							<div class="media margin-bottom-30">
@@ -110,13 +110,13 @@
 									<div class="col-md-6">
 										<label for="first_name" class="control-label">First
 											Name</label>
-										<form:input path="firstname" class="form-control" />
-										<form:errors path="firstname" style="color:red;" />
+										<form:input path="firstName" class="form-control" />
+										<form:errors path="firstName" style="color:red;" />
 									</div>
 									<div class="col-md-6">
 										<label for="first_name" class="control-label">Last Name</label>
-										<form:input path="lastname" class="form-control" />
-										<form:errors path="lastname" style="color:red;" />
+										<form:input path="lastName" class="form-control" />
+										<form:errors path="lastName" style="color:red;" />
 									</div>
 								</div>
 								<div class="form-group">
@@ -127,6 +127,12 @@
 										<form:errors path="username" style="color:red;" />
 									</div>
 									<div class="col-md-6">
+										<label for="first_name" class="control-label">Password
+											</label>
+										<form:input tyle="password" path="password" class="form-control" />
+										<form:errors path="password" style="color:red;" />
+									</div>
+									<div class="col-md-6">
 										<label for="email" class="control-label">Email</label>
 										<form:input path="email" class="form-control" />
 										<form:errors path="email" style="color:red;" />
@@ -134,39 +140,22 @@
 								</div><div class="form-group">
 									<div class="col-md-6">
 										<label for="phone" class="control-label">Phone</label>
-										<form:input path="phone" class="form-control" />
-										<form:errors path="phone" style="color:red;" />
+										<form:input path="phoneNumber" class="form-control" />
+										<form:errors path="phoneNumber" style="color:red;" />
 									</div>
-									<div class="col-md-6">
-										<label for="address" class="control-label">Address</label>
-										<form:input path="address" class="form-control" />
-										<form:errors path="address" style="color:red;" />
-									</div>
+									
 								</div>
-								<div class="form-group">
-									<div class="col-md-6 templatemo-radio-group">
-										<div class="mb-3">
-											<label class="form-label">Gender</label><br> <label
-												class="radio-inline"> <form:radiobutton path="gender"
-													value="0" label="Male" checked="true" />
-											</label> <label class="radio-inline"> <form:radiobutton
-													path="gender" value="1" label="Female" />
-											</label> <label class="radio-inline"> <form:radiobutton
-													path="gender" value="2" label="Other" />
-											</label>
-										</div>
-									</div>
-								</div>
+								
 								<div class="form-group">
 									<div class="col-md-6 templatemo-radio-group">
 										<div class="mb-3">
 											<label class="form-label">Role</label><br> 
 											<label
 												class="radio-inline"> 
-												<form:radiobutton path="role" value="0" label="Admin" checked="true" />
+												<form:radiobutton path="admin" value="0" label="Admin" checked="true" />
 											</label> 
 											<label class="radio-inline"> 
-												<form:radiobutton path="role" value="1" label="User"/>
+												<form:radiobutton path="admin" value="1" label="User"/>
 											</label> 
 										</div>
 									</div>
@@ -187,7 +176,7 @@
 								</div>
 								<div class="form-group">
 									<div class="col-md-12">
-										<input type="submit" value="Update" class="btn btn-warning">
+										<input type="submit" value="Save" class="btn btn-warning">
 									</div>
 								</div>
 							</div>

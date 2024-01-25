@@ -66,4 +66,25 @@ public class User implements Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<Order> orders;
+
+	public User(@NotEmpty(message = "{NotEmpty.user.username}") String username,
+			@NotEmpty(message = "{NotEmpty.user.password}") String password,
+			@NotEmpty(message = "{NotEmpty.user.firstName}") String firstName,
+			@NotEmpty(message = "{NotEmpty.user.lastName}") String lastName,
+			@NotEmpty(message = "{NotEmpty.user.phoneNumber}") String phoneNumber,
+			@NotEmpty(message = "{NotEmpty.user.email}") @Email(message = "{Email.user.email}") String email,
+			@NotNull(message = "{NotNull.user.admin}") Boolean admin,
+			@NotNull(message = "{NotNull.user.active}") Boolean active) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+		this.admin = admin;
+		this.active = active;
+	}
+	
+	
 }
