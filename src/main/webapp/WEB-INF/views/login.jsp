@@ -38,7 +38,7 @@
 				            <label for="username" class="control-label">Email</label>
 				            <div class="templatemo-input-icon-container">
 				            	<i class="fa fa-user"></i>
-				            	<form:input type="email" name = "email" class="form-control"/>
+				            	<form:input path="email" class="form-control"/>
                					<form:errors path="email" style="color:red;"/>
 				            </div>		            		            		            
 				          </div>              
@@ -48,7 +48,7 @@
 				            <label for="password" class="control-label">Password</label>
 				            <div class="templatemo-input-icon-container">
 				            	<i class="fa fa-lock"></i>
-				            	<form:input type="password" name = "password" class="form-control"/>
+				            	<form:input path="password" class="form-control"/>
                					<form:errors path="password" style="color:red;"/>
 				            </div>
 				          </div>
