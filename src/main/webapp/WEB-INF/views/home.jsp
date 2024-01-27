@@ -38,9 +38,8 @@
               <img src="img/1.jpg" alt="Image" class="img-circle img-thumbnail">  
             </div>              
           </div>            
-<<<<<<< HEAD
         </section>          
-=======
+
         </section>         
         <section class="tm-section tm-section-margin-bottom-0 row">
           <div class="col-lg-12 tm-section-header-container">
@@ -64,7 +63,7 @@
             </c:forEach>
           </div>          
         </section>
->>>>>>> e79480ce6b3869555424bab14f47c750425c5838
+
         <section class="tm-section row">
           <div class="col-lg-12 tm-section-header-container">
             <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="img/logo.png" alt="Logo" class="tm-site-logo"> Today's Special</h2>
