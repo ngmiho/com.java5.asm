@@ -25,7 +25,7 @@
 		<div class="col-md-12">
 			<h1 class="margin-bottom-15">Password Reset</h1>
 		        </div>
-		        <form:form action="/otp" method="post" modelAttribute="account"
+		        <form:form action="/otp" method="post" modelAttribute="user"
 				class="form-horizontal templatemo-forgot-password-form templatemo-container" role="form">
 			         <div class="form-group">
 			          <div class="col-md-12">

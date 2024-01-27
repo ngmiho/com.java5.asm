@@ -43,7 +43,7 @@
         <nav class="templatemo-left-nav">          
           <ul>
             <li><a href="/admin/index" class="${active == '1' ? 'active' : ''}"><i class="fa fa-home fa-fw"></i>Dashboard</a></li>
-            <li><a href="/admin/account" class="${active == '2' ? 'active' : ''}"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
+            <li><a href="/admin/user" class="${active == '2' ? 'active' : ''}"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
             <li><a href="/admin/product" class="${active == '3' ? 'active' : ''}"><i class="fa fa-sliders fa-fw"></i>Manage Product</a></li>
             <li><a href="/index"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
           </ul>  

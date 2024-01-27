@@ -24,7 +24,7 @@
 <body class="templatemo-bg-image-1">
 	<div class="container">
 		<div class="col-md-12">
-		<form:form action="/login" method="post" modelAttribute="account"
+		<form:form action="/login" method="post" modelAttribute="user"
 			class="form-horizontal templatemo-login-form-2 templatemo-container" role="form">
 				<div class="row">
 					<div class="col-md-12">

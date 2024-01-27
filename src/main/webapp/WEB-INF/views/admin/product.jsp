@@ -67,7 +67,7 @@
 					</div>
 				</div>
 				<form:form action="/admin/product/save" method="post"
-					modelAttribute="product"
+					modelAttribute="drink"
 					class="form-horizontal templatemo-container" role="form">
 					<div class="form-inner">
 						<i class="fa fa-times"></i>
@@ -90,21 +90,9 @@
 								<form:errors path="name" style="color:red;" />
 							</div>
 							<div class="col-md-6">
-								<label class="control-label">Price</label>
-								<form:input path="price" class="form-control" />
-								<form:errors path="price" style="color:red;" />
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-md-6">
-								<label class="control-label">Type</label>
-								<form:input path="type" class="form-control" />
-								<form:errors path="type" style="color:red;" />
-							</div>
-							<div class="col-md-6">
-								<label class="control-label">Image</label>
-								<form:input path="image" class="form-control" />
-								<form:errors path="image" style="color:red;" />
+								<label class="control-label">Drink size</label>
+								<form:input path="drinkSizes" class="form-control" />
+								<form:errors path="drinkSizes" style="color:red;" />
 							</div>
 						</div>
 						<div class="form-group">

@@ -35,14 +35,14 @@ public class Drink implements Serializable  {
 	private Integer id;
 	
 	@Column(columnDefinition = "nvarchar(255)")
-	@NotEmpty(message = "{NotEmpty.drink.name}")
+	//@NotEmpty(message = "{NotEmpty.drink.name}")
 	private String name;
 	
-	@NotNull(message = "{NotNull.drink.active}")
+	//@NotNull(message = "{NotNull.drink.active}")
 	private Boolean active = true;
 	
 	@Column(columnDefinition = "nvarchar(MAX)")
-	@NotEmpty(message = "{NotEmpty.drink.description}")
+	//@NotEmpty(message = "{NotEmpty.drink.description}")
 	private String description;
 	
 	@ManyToOne

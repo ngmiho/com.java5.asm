@@ -23,7 +23,7 @@
 <body class="templatemo-bg-gray templatemo-bg-image-1">
   <div class="container">
     <div class="col-md-12">
-      <form:form action="/sign-up" method="post" modelAttribute="account"
+      <form:form action="/sign-up" method="post" modelAttribute="user"
         class="form-horizontal templatemo-create-account templatemo-container" role="form">
         <div class="row">
           <div class="col-md-12">

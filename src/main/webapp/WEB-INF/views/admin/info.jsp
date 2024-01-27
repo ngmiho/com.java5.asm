@@ -7,7 +7,7 @@
 						<h2 class="templatemo-inline-block">PERSIONAL INFORMATION</h2>
 						<hr>
 						<form:form action="/admin/index" method="post"
-							modelAttribute="account"
+							modelAttribute="user"
 							class="form-horizontal templatemo-container" role="form">
 							<div class="form-inner">
 								<div class="form-group">
