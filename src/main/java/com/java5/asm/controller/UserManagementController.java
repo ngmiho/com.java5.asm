@@ -18,34 +18,34 @@ public class UserManagementController {
 	@Autowired
 	UserService userService;
 
-	@GetMapping("/admin/user")
+	@GetMapping("/admin/user-management")
 	public String getUser(Model model, @ModelAttribute("user") User user,
 			BindingResult result) {
 		model.addAttribute("user", user);
-		model.addAttribute("jsp", "user.jsp");
-		model.addAttribute("active", "2");
+		model.addAttribute("jsp", "user-management.jsp");
+		model.addAttribute("active", "4");
 		
 		if (result.hasErrors()) {
 			model.addAttribute("message", "Invalid information!");
 		} else {
 			model.addAttribute("message", "Valid information!");
 		}
-		return "/admin/index";
+		return "admin/index";
 	}
 
-	@PostMapping("/admin/user")
+	@PostMapping("/admin/user-management")
 	public String save(@ModelAttribute("user") User user, Model model,
 			BindingResult result) {
 		userService.save(user);
-		model.addAttribute("jsp", "user.jsp");
-		model.addAttribute("active", "2");
+		model.addAttribute("jsp", "user-management.jsp");
+		model.addAttribute("active", "4");
 		
 		if (result.hasErrors()) {
 			model.addAttribute("message", "Invalid information!");
 		} else {
 			model.addAttribute("message", "Valid information!");
 		}
-		return "/admin/index";
+		return "admin/index";
 
 	}
 }

@@ -123,8 +123,8 @@
 									<div class="col-md-6">
 										<label for="first_name" class="control-label">User
 											Name</label>
-										<form:input path="username" class="form-control" />
-										<form:errors path="username" style="color:red;" />
+										<form:input path="userName" class="form-control" />
+										<form:errors path="userName" style="color:red;" />
 									</div>
 									<div class="col-md-6">
 										<label for="first_name" class="control-label">Password

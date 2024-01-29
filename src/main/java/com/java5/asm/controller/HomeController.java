@@ -145,18 +145,5 @@ public class HomeController {
 		
 		return "login";
 	}
-	
-	@RequestMapping("/change-password")
-	public String rqChangePassword(@Valid @ModelAttribute("user") User user,
-			BindingResult result, Model model){
-		if (result.hasErrors()) {
-			model.addAttribute("message", "Invalid information!");
-		} else {
-			model.addAttribute("message", "Valid information!");
-		}
-		return "change-password";
-	}
-	
-	
-	
+
 }

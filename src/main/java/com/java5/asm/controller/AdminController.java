@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.java5.asm.dao.DrinkDAO;
 import com.java5.asm.dao.UserDAO;
 import com.java5.asm.entity.Drink;
+import com.java5.asm.entity.Order;
 import com.java5.asm.entity.User;
 
 
@@ -39,7 +40,7 @@ public class AdminController {
 
 		model.addAttribute("user", user);
 		
-		return "/admin/index";
+		return "admin/index";
 	}
 	@PostMapping("/admin/index")
 	public String postAdminIndex(@Valid @ModelAttribute("user") User user,
@@ -53,16 +54,42 @@ public class AdminController {
 			model.addAttribute("message", "Valid information!");
 		}
 		
-		return "/admin/index";
+		return "admin/index";
+	}
+	
+	@GetMapping("/admin/history")
+	public String getAdminOrder(Model model) {
+		model.addAttribute("jsp", "history.jsp");
+		model.addAttribute("active", "3");
+		
+		Optional<User> user = userDAO.findById("1");
+
+		model.addAttribute("user", user);
+		
+		return "admin/index";
+	}
+	@PostMapping("/admin/history")
+	public String postAdminOrder(@Valid @ModelAttribute("order") Order order,
+			BindingResult result, Model model) {
+		model.addAttribute("jsp", "history.jsp");
+		model.addAttribute("active", "3");
+		
+		if (result.hasErrors()) {
+			model.addAttribute("message", "Invalid information!");
+		} else {
+			model.addAttribute("message", "Valid information!");
+		}
+		
+		return "admin/index";
 	}
 	
 	
-	@GetMapping("/admin/product")
+	@GetMapping("/admin/product-management")
 	public String getAdminProduct(@Valid @ModelAttribute("drink") Drink drink,
 			@Valid @ModelAttribute("user") User user,
 			BindingResult result, Model model) {
-		model.addAttribute("jsp", "product.jsp");
-		model.addAttribute("active", "3");
+		model.addAttribute("jsp", "product-management.jsp");
+		model.addAttribute("active", "5");
 		
 		if (result.hasErrors()) {
 			model.addAttribute("message", "Invalid information!");
@@ -71,12 +98,12 @@ public class AdminController {
 		}
 		return "admin/index";
 	}
-	@PostMapping("/admin/product")
+	@PostMapping("/admin/product-management")
 	public String postAdminProduct(@Valid @ModelAttribute("drink") Drink drink,
 			@Valid @ModelAttribute("user") User user,
 			BindingResult result, Model model) {
-		model.addAttribute("jsp", "product.jsp");
-		model.addAttribute("active", "3");
+		model.addAttribute("jsp", "product-management.jsp");
+		model.addAttribute("active", "5");
 		
 		return "admin/index";
 	}
