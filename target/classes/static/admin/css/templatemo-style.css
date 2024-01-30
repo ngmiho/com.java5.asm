@@ -57,6 +57,10 @@ nav li {
 }
 .orange-bg .fa-times {	background-color: #F0A790; }
 .orange-bg .fa-times:hover { background-color: #E14311; }
+.white-bg {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+}
 .pink-bg {
 	background-color: #D7425C;
 	color: white;

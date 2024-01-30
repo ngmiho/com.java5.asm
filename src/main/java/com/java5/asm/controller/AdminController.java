@@ -133,6 +133,54 @@ public class AdminController {
 		
 		return "admin/index";
 	}
+	
+	@GetMapping("/admin/order-management")
+	public String getAdminOrderManagement(@Valid @ModelAttribute("drink") Drink drink,
+			@Valid @ModelAttribute("user") User user,
+			BindingResult result, Model model) {
+		model.addAttribute("jsp", "order-management.jsp");
+		model.addAttribute("active", "6");
+		
+		if (result.hasErrors()) {
+			model.addAttribute("message", "Invalid information!");
+		} else {
+			model.addAttribute("message", "Valid information!");
+		}
+		return "admin/index";
+	}
+	@PostMapping("/admin/order-management")
+	public String postAdminOrderManagement(@Valid @ModelAttribute("drink") Drink drink,
+			@Valid @ModelAttribute("user") User user,
+			BindingResult result, Model model) {
+		model.addAttribute("jsp", "order-management.jsp");
+		model.addAttribute("active", "6");
+		
+		return "admin/index";
+	}
+	
+	@GetMapping("/admin/report")
+	public String getAdminReport(@Valid @ModelAttribute("drink") Drink drink,
+			@Valid @ModelAttribute("user") User user,
+			BindingResult result, Model model) {
+		model.addAttribute("jsp", "report.jsp");
+		model.addAttribute("active", "7");
+		
+		if (result.hasErrors()) {
+			model.addAttribute("message", "Invalid information!");
+		} else {
+			model.addAttribute("message", "Valid information!");
+		}
+		return "admin/index";
+	}
+	@PostMapping("/admin/report")
+	public String postAdminReport(@Valid @ModelAttribute("drink") Drink drink,
+			@Valid @ModelAttribute("user") User user,
+			BindingResult result, Model model) {
+		model.addAttribute("jsp", "report.jsp");
+		model.addAttribute("active", "7");
+		
+		return "admin/index";
+	}
 }
 
 
