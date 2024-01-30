@@ -276,7 +276,7 @@ footer { padding: 15px; }
 }
 .panel-default .fa-times {
 	top: 12px;
-	background-color: #67B5B9;
+	background-color: rgb(255, 128, 0);
 }
 .panel-default .fa-times:hover { background-color: #297B7F;	}
 .panel { border-radius: 10px; }

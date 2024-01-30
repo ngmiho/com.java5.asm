@@ -57,8 +57,34 @@ public class AdminController {
 		return "admin/index";
 	}
 	
-	@GetMapping("/admin/history")
+	@GetMapping("/admin/order")
 	public String getAdminOrder(Model model) {
+		model.addAttribute("jsp", "order.jsp");
+		model.addAttribute("active", "2");
+		
+		Optional<User> user = userDAO.findById("1");
+
+		model.addAttribute("user", user);
+		
+		return "admin/index";
+	}
+	@PostMapping("/admin/order")
+	public String postAdminOrder(@Valid @ModelAttribute("order") Order order,
+			BindingResult result, Model model) {
+		model.addAttribute("jsp", "order.jsp");
+		model.addAttribute("active", "2");
+		
+		if (result.hasErrors()) {
+			model.addAttribute("message", "Invalid information!");
+		} else {
+			model.addAttribute("message", "Valid information!");
+		}
+		
+		return "admin/index";
+	}
+	
+	@GetMapping("/admin/history")
+	public String getAdminHistory(Model model) {
 		model.addAttribute("jsp", "history.jsp");
 		model.addAttribute("active", "3");
 		
@@ -69,7 +95,7 @@ public class AdminController {
 		return "admin/index";
 	}
 	@PostMapping("/admin/history")
-	public String postAdminOrder(@Valid @ModelAttribute("order") Order order,
+	public String postAdminHistory(@Valid @ModelAttribute("order") Order order,
 			BindingResult result, Model model) {
 		model.addAttribute("jsp", "history.jsp");
 		model.addAttribute("active", "3");
