@@ -268,7 +268,7 @@ footer { padding: 15px; }
 .fa-heart:hover { color: #39ADB4; }
 .progress {	display: block; }
 .panel-default>.panel-heading {
-	background-color: #39ADB4;
+	background-color: rgb(128, 64, 0);
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	color: white;
@@ -276,7 +276,7 @@ footer { padding: 15px; }
 }
 .panel-default .fa-times {
 	top: 12px;
-	background-color: #67B5B9;
+	background-color: rgb(255, 128, 0);
 }
 .panel-default .fa-times:hover { background-color: #297B7F;	}
 .panel { border-radius: 10px; }

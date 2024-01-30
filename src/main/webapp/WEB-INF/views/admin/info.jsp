@@ -4,10 +4,10 @@
 					<div class="templatemo-content-widget white-bg col-2">
 						<i class="fa fa-times"></i>
 						<div class="square"></div>
-						<h2 class="templatemo-inline-block">PERSIONAL INFORMATION</h2>
+						<h2 class="templatemo-inline-block">INFORMATION</h2>
 						<hr>
 						<form:form action="/admin/index" method="post"
-							modelAttribute="account"
+							modelAttribute="user"
 							class="form-horizontal templatemo-container" role="form">
 							<div class="form-inner">
 								<div class="form-group">
@@ -47,6 +47,27 @@
 												<form:radiobutton path="gender" value="2" label="Other" />
 											</label>
 										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-12">
+										<label for="username" class="control-label">Username</label>
+										<form:input path="userName" class="form-control" />
+										<form:errors path="userName" style="color:red;" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-12">
+										<label for="username" class="control-label">Phone Number</label>
+										<form:input path="phoneNumber" class="form-control" />
+										<form:errors path="phoneNumber" style="color:red;" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-12">
+										<label for="username" class="control-label">Address</label>
+										<form:input path="address" class="form-control" />
+										<form:errors path="address" style="color:red;" />
 									</div>
 								</div>
 								<div class="form-group">

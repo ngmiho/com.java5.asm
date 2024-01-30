@@ -27,7 +27,7 @@
           <h1>Visual Admin</h1>
         </header>
         <div class="profile-photo-container">
-          <img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
+          <img src="/images/profile1.jpg" alt="Profile Photo" class="img-responsive">  
           <div class="profile-photo-overlay"></div>
         </div>      
         <!-- Search box -->
@@ -42,10 +42,15 @@
         </div>
         <nav class="templatemo-left-nav">          
           <ul>
-            <li><a href="/admin/index" class="${active == '1' ? 'active' : ''}"><i class="fa fa-home fa-fw"></i>Dashboard</a></li>
-            <li><a href="/admin/account" class="${active == '2' ? 'active' : ''}"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
-            <li><a href="/admin/product" class="${active == '3' ? 'active' : ''}"><i class="fa fa-sliders fa-fw"></i>Manage Product</a></li>
-            <li><a href="/index"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
+            <li><a href="/admin/index" class="${active == '1' ? 'active' : ''}"><i class="fa fa-home fa-fw"></i>Information</a></li>
+            <li><a href="/admin/order" class="${active == '2' ? 'active' : ''}"><i class="fa fa-users fa-fw"></i>Order</a></li>
+            <li><a href="/admin/history" class="${active == '3' ? 'active' : ''}"><i class="fa fa-users fa-fw"></i>History</a></li>
+            <li><a href="/index"><i class="fa fa-sliders fa-fw"></i>Sign Out</a></li>
+            <li><hr style="color:white;"></li>
+            <li><a href="/admin/user-management" class="${active == '4' ? 'active' : ''}"><i class="fa fa-sliders fa-fw"></i>Manage User</a></li>
+            <li><a href="/admin/drink-management" class="${active == '5' ? 'active' : ''}"><i class="fa fa-sliders fa-fw"></i>Manage Drink</a></li>
+            <li><a href="/admin/order-management" class="${active == '6' ? 'active' : ''}"><i class="fa fa-sliders fa-fw"></i>Manage Order</a></li>
+            <li><a href="/admin/report" class="${active == '7' ? 'active' : ''}"><i class="fa fa-sliders fa-fw"></i>Report</a></li>
           </ul>  
         </nav>
       </div>
@@ -55,9 +60,9 @@
           <div class="row">
             <nav class="templatemo-top-nav col-lg-12 col-md-12">
               <ul class="text-uppercase">
-                <li><a href="/admin/index" class="active">Admin panel</a></li>
-                <li><a href="/index">Home</a></li>
+                <li><a href="/admin/index" class="active">Dash Board</a></li>
                 <li><a href="javascript:;" data-toggle="modal" data-target="#templatemo_modal">Change Password</a></li>
+                <li><a href="/index">Home</a></li>
               </ul>  
             </nav> 
           </div>

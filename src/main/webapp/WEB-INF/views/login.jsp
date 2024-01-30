@@ -24,7 +24,7 @@
 <body class="templatemo-bg-image-1">
 	<div class="container">
 		<div class="col-md-12">
-		<form:form action="/login" method="post" modelAttribute="account"
+		<form:form action="/login" method="post" modelAttribute="user"
 			class="form-horizontal templatemo-login-form-2 templatemo-container" role="form">
 				<div class="row">
 					<div class="col-md-12">
@@ -38,7 +38,7 @@
 				            <label for="username" class="control-label">Email</label>
 				            <div class="templatemo-input-icon-container">
 				            	<i class="fa fa-user"></i>
-				            	<form:input type="email" name = "email" class="form-control"/>
+				            	<form:input path="email" class="form-control"/>
                					<form:errors path="email" style="color:red;"/>
 				            </div>		            		            		            
 				          </div>              
@@ -48,7 +48,7 @@
 				            <label for="password" class="control-label">Password</label>
 				            <div class="templatemo-input-icon-container">
 				            	<i class="fa fa-lock"></i>
-				            	<form:input type="password" name = "password" class="form-control"/>
+				            	<form:input path="password" class="form-control"/>
                					<form:errors path="password" style="color:red;"/>
 				            </div>
 				          </div>

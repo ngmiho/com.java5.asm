@@ -30,7 +30,7 @@ public class User implements Serializable {
 	@Id
 	@Column(columnDefinition = "varchar(10)")
 	@NotEmpty(message = "{NotEmpty.user.username}")
-	private String username;
+	private String userName;
 	
 	@NotEmpty(message = "{NotEmpty.user.password}")
 	private String password;
@@ -67,7 +67,7 @@ public class User implements Serializable {
 	@OneToMany(mappedBy = "user")
 	private List<Order> orders;
 
-	public User(@NotEmpty(message = "{NotEmpty.user.username}") String username,
+	public User(@NotEmpty(message = "{NotEmpty.user.username}") String userName,
 			@NotEmpty(message = "{NotEmpty.user.password}") String password,
 			@NotEmpty(message = "{NotEmpty.user.firstName}") String firstName,
 			@NotEmpty(message = "{NotEmpty.user.lastName}") String lastName,
@@ -76,7 +76,7 @@ public class User implements Serializable {
 			@NotNull(message = "{NotNull.user.admin}") Boolean admin,
 			@NotNull(message = "{NotNull.user.active}") Boolean active) {
 		super();
-		this.username = username;
+		this.userName = userName;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
