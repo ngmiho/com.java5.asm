@@ -110,11 +110,11 @@ public class AdminController {
 	}
 	
 	
-	@GetMapping("/admin/product-management")
+	@GetMapping("/admin/drink-management")
 	public String getAdminProduct(@Valid @ModelAttribute("drink") Drink drink,
 			@Valid @ModelAttribute("user") User user,
 			BindingResult result, Model model) {
-		model.addAttribute("jsp", "product-management.jsp");
+		model.addAttribute("jsp", "drink-management.jsp");
 		model.addAttribute("active", "5");
 		
 		if (result.hasErrors()) {
@@ -124,11 +124,11 @@ public class AdminController {
 		}
 		return "admin/index";
 	}
-	@PostMapping("/admin/product-management")
+	@PostMapping("/admin/drink-management")
 	public String postAdminProduct(@Valid @ModelAttribute("drink") Drink drink,
 			@Valid @ModelAttribute("user") User user,
 			BindingResult result, Model model) {
-		model.addAttribute("jsp", "product-management.jsp");
+		model.addAttribute("jsp", "drink-management.jsp");
 		model.addAttribute("active", "5");
 		
 		return "admin/index";

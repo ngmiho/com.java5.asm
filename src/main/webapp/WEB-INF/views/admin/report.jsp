@@ -1,8 +1,12 @@
-<div class="col-1">
+<div class="templatemo-content-container">
+	<div class="templatemo-flex-row flex-content-row">
+		<div class="templatemo-content-widget white-bg col-2">
+			<div class="col-1">
               <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
                 <i class="fa fa-times"></i>
                 <div class="panel-heading templatemo-position-relative">
-                	<h2 class="text-uppercase">REPORT</h2>
+					<div class="square"></div>
+					<h2 class="templatemo-inline-block">REPORT</h2>
                 </div>
                 <br>
                 <div class="row">
@@ -33,6 +37,7 @@
                   </table>    
                 </div>                          
               </div>
-            </div>           
-
-          
+            </div>   		
+		</div>
+	</div>
+</div>

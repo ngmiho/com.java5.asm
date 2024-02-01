@@ -37,9 +37,7 @@ public class HomeController {
 		
 		return "index";
 	}
-<<<<<<< HEAD
-	
-=======
+
 	@PostMapping("/index")
 	public String postIndex(Model model) {
 		model.addAttribute("jsp", "home.jsp");
@@ -63,20 +61,7 @@ public class HomeController {
 		return "index";
 	}
 	
-	@GetMapping("/menu")
-	public String getMenu(Model model) {
-		model.addAttribute("jsp", "menu.jsp");
-		model.addAttribute("active", "3");
-		
-		return "index";
-	}
-	@PostMapping("/menu")
-	public String postMenu(Model model) {
-		model.addAttribute("jsp", "menu.jsp");
-		model.addAttribute("active", "3");
-		
-		return "index";
-	}
+
 	
 	@GetMapping("/contact")
 	public String getContact(Model model) {
@@ -89,6 +74,21 @@ public class HomeController {
 	public String postContact(Model model) {
 		model.addAttribute("jsp", "contact.jsp");
 		model.addAttribute("active", "4");
+		
+		return "index";
+	}
+	
+	@GetMapping("/detail")
+	public String getDetail(Model model) {
+		model.addAttribute("jsp", "detail.jsp");
+		model.addAttribute("active", "6");
+		
+		return "index";
+	}
+	@PostMapping("/detail")
+	public String postDetail(Model model) {
+		model.addAttribute("jsp", "detail.jsp");
+		model.addAttribute("active", "6");
 		
 		return "index";
 	}
@@ -106,7 +106,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/sign-up")
-	public String rqSignUp(@Valid @ModelAttribute("user") User User,
+	public String rqSignUp(@Valid @ModelAttribute("user") User user,
 			BindingResult result, Model model){
 		if (result.hasErrors()) {
 			model.addAttribute("message", "Invalid information!");
@@ -149,5 +149,4 @@ public class HomeController {
 		return "login";
 	}
 
->>>>>>> 0debabbeda8d82b6cee5b1a28bd56af442f9946f
 }

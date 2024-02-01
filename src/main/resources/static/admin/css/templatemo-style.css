@@ -50,7 +50,7 @@ nav li {
 .yellow-bg { background-color: #D8D138; }
 .white-bg {	background-color: white; }
 .white-bg .fa-times { background-color: #d7d7d7; }
-.white-bg .fa-times:hover {	background: #83ccd1; }
+.white-bg .fa-times:hover {	background: rgb(255, 128, 0); }
 .orange-bg {
 	background-color: #F17A54;
 	color: white;
@@ -269,10 +269,10 @@ footer { padding: 15px; }
   z-index: 100;
   transition: all 0.3s ease;
 }
-.fa-heart:hover { color: #39ADB4; }
+.fa-heart:hover { color: rgb(255, 128, 0); }
 .progress {	display: block; }
 .panel-default>.panel-heading {
-	background-color: rgb(128, 64, 0);
+	background-color: rgb(192, 192, 192);
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	color: white;
@@ -280,9 +280,9 @@ footer { padding: 15px; }
 }
 .panel-default .fa-times {
 	top: 12px;
-	background-color: rgb(255, 128, 0);
+	background-color: rgb(192, 192, 192);
 }
-.panel-default .fa-times:hover { background-color: #297B7F;	}
+.panel-default .fa-times:hover { background-color: rgb(255, 128, 0);	}
 .panel { border-radius: 10px; }
 .pagination-wrap {
 	margin-right: 10px;
@@ -375,11 +375,11 @@ footer { padding: 15px; }
 	transition: all 0.3s ease;
 }
 .templatemo-blue-button {
-	background-color: #39ADB4;
+	background-color: rgb(192, 192, 192);
 	border: none;	
 	color: white;	
 }
-.templatemo-blue-button:hover {	background-color: #2A858B; }
+.templatemo-blue-button:hover {	background-color: rgb(255, 128, 0); color: white;}
 .templatemo-white-button {
 	background-color: white;
 	border: 1px solid #39ADB4;	
@@ -435,8 +435,8 @@ input[type="radio"]:checked + label span {
 	transition: all 0.3s ease;
 }
 .templatemo-edit-btn:hover {
-	background-color: #39ADB4;
-	border: 1px solid #39ADB4;
+	background-color: rgb(255, 128, 64);
+	border: 1px solid rgb(255, 128, 0);
 	color: white;
 }
 .templatemo-link { color: black; }

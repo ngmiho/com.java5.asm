@@ -13,33 +13,33 @@
 							class="table table-striped table-bordered templatemo-user-table">
 							<thead>
 								<tr>
-									<td><a href="" class="white-text templatemo-sort-by">#
+									<th><a href="" class="white-text templatemo-sort-by">#
 											<span class="caret"></span>
-									</a></td>
-									<td><a href="" class="white-text templatemo-sort-by">First
+									</a></th>
+									<th><a href="" class="white-text templatemo-sort-by">First
 											Name <span class="caret">
 									</span>
-									</a></td>
-									<td><a href="" class="white-text templatemo-sort-by">Last
+									</a></th>
+									<th><a href="" class="white-text templatemo-sort-by">Last
 											Name <span class="caret"></span>
-									</a></td>
-									<td><a href="" class="white-text templatemo-sort-by">Gender <span class="caret"></span>
-									</a></td>
-									<td><a href="" class="white-text templatemo-sort-by">User
+									</a></th>
+									<th><a href="" class="white-text templatemo-sort-by">Gender <span class="caret"></span>
+									</a></th>
+									<th><a href="" class="white-text templatemo-sort-by">User
 											Name <span class="caret"></span>
-									</a></td>
-									<td><a href="" class="white-text templatemo-sort-by">Phone <span class="caret"></span>
-									<td><a href="" class="white-text templatemo-sort-by">Address <span class="caret"></span>
-									<td><a href="" class="white-text templatemo-sort-by">Email
-											<span class="caret"></span>
-									</a></td>
-									<td><a href="" class="white-text templatemo-sort-by">Role<span class="caret"></span>
-									</a></td>
-									<td><a href="" class="white-text templatemo-sort-by">Active<span class="caret"></span>
-									</a></td>
-									<td>Edit</td>
-									<td>Action</td>
-									<td>Delete</td>
+									</a></th>
+									<th><a href="" class="white-text templatemo-sort-by">Phone <span class="caret"></span></th>
+									<th><a href="" class="white-text templatemo-sort-by">Address <span class="caret"></span></th>
+									<th><a href="" class="white-text templatemo-sort-by">Email
+											<span class="caret"></span></th>
+									</a></th>
+									<th><a href="" class="white-text templatemo-sort-by">Role<span class="caret"></span>
+									</a></th>
+									<th><a href="" class="white-text templatemo-sort-by">Active<span class="caret"></span>
+									</a></th>
+									<th>Edit</th>
+									<th>Action</th>
+									<th>Delete</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -177,6 +177,8 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<input type="submit" value="Save" class="btn btn-warning">
+								        <input type="submit" value="Delete" class="btn btn-warning">
+								        <input type="submit" value="Update" class="btn btn-warning">
 									</div>
 								</div>
 							</div>

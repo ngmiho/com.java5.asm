@@ -52,6 +52,7 @@
                 <li><a href="/menu" class="${active == '3' ? 'active' : ''}">Menu</a></li>
                 <li><a href="/contact" class="${active == '4' ? 'active' : ''}">Contact</a></li>
                 <li><a href="/admin/index" class="${active == '5' ? 'active' : ''}">Manager</a></li>
+                <li><a href="/detail" class="${active == '6' ? 'active' : ''}">Detail</a></li>
                 <li><a href="/login" >Login</a></li>
                 <li><a href="/sign-up">Sign Up</a></li>
               </ul>
@@ -107,6 +108,6 @@
    <!-- JS -->
    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
    <script type="text/javascript" src="js/templatemo-script.js"></script>      <!-- Templatemo Script -->
-
+	
 </body>
 </html>

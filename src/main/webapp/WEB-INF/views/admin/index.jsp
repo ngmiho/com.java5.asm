@@ -79,7 +79,9 @@
 		      	<jsp:include page="change-password.jsp"></jsp:include>
 		      </div>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      	<div class="form-group">
+                      <button type="button" class="templatemo-blue-button" data-dismiss="modal">Close</button>
+                </div>
 		      </div>
 		    </div>
 		  </div>
