@@ -1,8 +1,12 @@
 package com.java5.asm.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,10 +15,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.java5.asm.dao.DrinkDAO;
+import com.java5.asm.dao.DrinkImageDAO;
 import com.java5.asm.entity.Drink;
 import com.java5.asm.entity.User;
+import com.java5.asm.service.DrinkService;
+
 
 import jakarta.validation.Valid;
 
@@ -26,14 +34,21 @@ public class HomeController {
 	@Autowired
 	DrinkDAO drinkDAO;
 	
+	@Autowired
+	DrinkImageDAO drinkImageDAO;
+	
+	@Autowired
+	DrinkService drinkService;
+	
 	@GetMapping("/index")
-	public String getIndex(Model model) {
+	public String getIndex(Model model, @RequestParam("p") Optional<Integer> p) {
+		Pageable pageable = PageRequest.of(p.orElse(0), 3);
+		Page<Drink> drink =  drinkDAO.findAll(pageable);
+		model.addAttribute("page", drink);
 		model.addAttribute("jsp", "home.jsp");
-		model.addAttribute("active", "1");
 		
-		List<Drink> bestsells = drinkDAO.findAll();
-
-		model.addAttribute("bestsells", bestsells);
+		model.addAttribute("DRINK", drinkImageDAO.findAll());
+		model.addAttribute("active", "3");
 		
 		return "index";
 	}
@@ -61,7 +76,28 @@ public class HomeController {
 		return "index";
 	}
 	
+<<<<<<< HEAD
 
+=======
+	@GetMapping("/menu")
+	public String getMenu(Model model, @RequestParam("p") Optional<Integer> p) {
+		Pageable pageable = PageRequest.of(p.orElse(0), 6);
+		Page<Drink> drink =  drinkDAO.findAll(pageable);
+		model.addAttribute("page", drink);
+		model.addAttribute("jsp", "menu.jsp");
+		//model.addAttribute("DRINK", drinkService.findAll());
+		model.addAttribute("active", "3");
+		
+		return "index";
+	}
+	@PostMapping("/menu")
+	public String postMenu(Model model) {
+		model.addAttribute("jsp", "menu.jsp");
+		model.addAttribute("active", "3");
+		
+		return "index";
+	}
+>>>>>>> b56529dd428cddab37ec8ac3d206c8487d88ed2f
 	
 	@GetMapping("/contact")
 	public String getContact(Model model) {
@@ -149,4 +185,8 @@ public class HomeController {
 		return "login";
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b56529dd428cddab37ec8ac3d206c8487d88ed2f
 }
