@@ -6,29 +6,26 @@
 						<div class="square"></div>
 						<h2 class="templatemo-inline-block">INFORMATION</h2>
 						<hr>
-						<form:form action="/admin/index" method="post"
-							modelAttribute="user"
+						<form:form action="/admin/information/update" method="post"
+							modelAttribute="account"
 							class="form-horizontal templatemo-container" role="form">
 							<div class="form-inner">
 								<div class="form-group">
 									<div class="col-md-6">
 										<label class="control-label">First Name</label>
-										<form:input path="firstname" class="form-control" />
-										<form:errors path="firstname" style="color:red;" />
+										<form:input path="firstName" class="form-control" />
+										<form:errors path="firstName" style="color:red;" />
 									</div>
 									<div class="col-md-6">
 										<label class="control-label">Last Name</label>
-										<form:input path="lastname" class="form-control" />
-										<form:errors path="lastname" style="color:red;" />
+										<form:input path="lastName" class="form-control" />
+										<form:errors path="lastName" style="color:red;" />
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-md-12">
-<<<<<<< HEAD
 										<label for="username" class="control-label">Email</label>
-=======
 										<label class="control-label">Email</label>
->>>>>>> e79480ce6b3869555424bab14f47c750425c5838
 										<form:input path="email" class="form-control" />
 										<form:errors path="email" style="color:red;" />
 									</div>

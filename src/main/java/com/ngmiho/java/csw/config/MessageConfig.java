@@ -1,4 +1,4 @@
-package com.java5.asm.config;
+package com.ngmiho.java.csw.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;

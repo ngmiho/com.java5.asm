@@ -1,4 +1,4 @@
-package com.java5.asm;
+package com.ngmiho.java.csw;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

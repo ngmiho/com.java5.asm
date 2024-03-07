@@ -1,4 +1,6 @@
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <div class="templatemo-content-container">
 	<div class="templatemo-flex-row flex-content-row">
 		<div class="templatemo-content-widget white-bg col-2">
@@ -10,30 +12,44 @@
 					<h2 class="templatemo-inline-block">ORDER MANAGEMENT</h2>
 			      </div>
 			      <br>
-			      <div class="row">
-			        <div class="col-md-3 m-2">
-			          <input type="text" class="form-control" placeholder="By Order ID" name="orderId">
-			        </div>
-			        <div class="col-md-3 m-2">
-			          <input type="text" class="form-control" placeholder="By Status" name="status">
-			        </div>
-			        <a href="#" class="btn btn-warning">Search</a>
-			      </div>
+			      <form:form action="/admin/order-management" method="post" modelAttribute="order">
+			      	<div class="row">
+				        <div class="col-md-3 m-2">
+				        	<form:input path="id" class="form-control" placeholder="Order id?"/>
+				        </div>
+				        <a href="/admin/order-management?orderId=1" class="btn btn-warning">Search</a>
+				        <button type="submit" class="btn btn-default">Search</button>
+				      </div>
+			      </form:form>
 			      <div class="table-responsive">
 			        <table class="table table-striped table-bordered">
 			          <thead>
 			            <tr>
+			              <td>#</td>
 			              <td>Order ID</td>
-			              <td>Status</td>
+			              <td>Waiting</td>
+			              <td>Preparation</td>
+			              <td>Shipping</td>
+			              <td>Payment</td>
+			              <td>Cancel</td>
+			              <td>Payment Status</td>
 			              <td>Total</td>
 			            </tr>
 			          </thead>
 			          <tbody>
-			            <tr>
-			              <td>order001</td>
-			              <td>Delivering</td>
-			              <td>xxx.xxx VND</td>
-			            </tr>
+			          	<c:forEach var="item" items="${pages.content}" varStatus="i" begin="0" end="${pages.size - 1}">
+			          		<tr>
+				              <td>${i.index}</td>
+				              <td>${item.id}</td>
+				              <td>${item.}</td>
+				              <td>${item.}</td>
+				              <td>${item.}</td>
+				              <td>${item.}</td>
+				              <td>${item.}</td>
+				              <td>${item.}</td>
+				              <td><fmt:formatNumber type="number" pattern="###,###" value="${item.totalPrice}"/> VND</td>
+				            </tr>
+			          	</c:forEach>
 			          </tbody>
 			        </table>
 			      </div>

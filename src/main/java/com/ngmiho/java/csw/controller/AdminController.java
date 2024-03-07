@@ -1,51 +1,62 @@
-package com.java5.asm.controller;
+package com.ngmiho.java.csw.controller;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.java5.asm.dao.DrinkDAO;
-import com.java5.asm.dao.UserDAO;
-import com.java5.asm.entity.Drink;
-import com.java5.asm.entity.Order;
-import com.java5.asm.entity.User;
-
+import com.ngmiho.java.csw.entity.Account;
+import com.ngmiho.java.csw.entity.Order;
+import com.ngmiho.java.csw.entity.Product;
+import com.ngmiho.java.csw.service.AccountService;
+import com.ngmiho.java.csw.service.OrderService;
+import com.ngmiho.java.csw.service.ProductService;
 
 import jakarta.validation.Valid;
 
 @Controller
+@RequestMapping("admin")
 public class AdminController {
-
-	@Autowired
-	DrinkDAO drinkDAO;
-	@Autowired
-	UserDAO userDAO;
 	
+	@Autowired
+	AccountService accountService;
+	@Autowired
+	OrderService orderService;
+	@Autowired
+	ProductService productService;
 	
-	@GetMapping("/admin/index")
-	public String getAdminIndex(Model model) {
-		model.addAttribute("jsp", "info.jsp");
-		model.addAttribute("active", "1");
-		
-		Optional<User> user = userDAO.findById("1");
-
-		model.addAttribute("user", user);
-		
-		return "admin/index";
+	Pageable pageable = PageRequest.of(0, 10);
+	
+	@GetMapping("/index")
+	public String index(Model model) {
+		model.addAttribute("account", accountService.findAll(pageable).getContent().get(0));
+		return "layout/admin/index";
 	}
-	@PostMapping("/admin/index")
-	public String postAdminIndex(@Valid @ModelAttribute("user") User user,
-			BindingResult result, Model model) {
-		model.addAttribute("jsp", "info.jsp");
+	
+	@GetMapping("/information")
+	public String getAdminIndex(Model model, @ModelAttribute("account") Account account, BindingResult result) {
+		
+		
+		model.addAttribute("account", accountService.findAll(pageable).getContent().get(0));
+		model.addAttribute("jsp", "_information.jsp");
+		model.addAttribute("active", "1");
+		return "forward:/admin/index";
+	}
+	@PostMapping("/information")
+	public String postAdminIndex(BindingResult result, Model model) {
+		model.addAttribute("jsp", "_information.jsp");
 		model.addAttribute("active", "1");
 		
 		if (result.hasErrors()) {
@@ -54,24 +65,24 @@ public class AdminController {
 			model.addAttribute("message", "Valid information!");
 		}
 		
-		return "admin/index";
+		return "forward:/admin/index";
 	}
 	
-	@GetMapping("/admin/order")
+	@GetMapping("/order")
 	public String getAdminOrder(Model model) {
-		model.addAttribute("jsp", "order.jsp");
+		
+		Account account = accountService.findAll(pageable).getContent().get(0);
+		
+		model.addAttribute("currentOrder", orderService.findAll(pageable).getContent().get(0));
+		model.addAttribute("pages", orderService.findByAccountUserName(account.getUserName(), pageable));
+		model.addAttribute("jsp", "_order.jsp");
 		model.addAttribute("active", "2");
-		
-		Optional<User> user = userDAO.findById("1");
-
-		model.addAttribute("user", user);
-		
-		return "admin/index";
+		return "forward:/admin/index";
 	}
-	@PostMapping("/admin/order")
+	@PostMapping("/order")
 	public String postAdminOrder(@Valid @ModelAttribute("order") Order order,
 			BindingResult result, Model model) {
-		model.addAttribute("jsp", "order.jsp");
+		model.addAttribute("jsp", "_order.jsp");
 		model.addAttribute("active", "2");
 		
 		if (result.hasErrors()) {
@@ -80,24 +91,20 @@ public class AdminController {
 			model.addAttribute("message", "Valid information!");
 		}
 		
-		return "admin/index";
+		return "forward:/admin/index";
 	}
 	
-	@GetMapping("/admin/history")
+	@GetMapping("/history")
 	public String getAdminHistory(Model model) {
-		model.addAttribute("jsp", "history.jsp");
+		model.addAttribute("jsp", "_history.jsp");
 		model.addAttribute("active", "3");
 		
-		Optional<User> user = userDAO.findById("1");
-
-		model.addAttribute("user", user);
-		
-		return "admin/index";
+		return "forward:/admin/index";
 	}
-	@PostMapping("/admin/history")
+	@PostMapping("/history")
 	public String postAdminHistory(@Valid @ModelAttribute("order") Order order,
 			BindingResult result, Model model) {
-		model.addAttribute("jsp", "history.jsp");
+		model.addAttribute("jsp", "_history.jsp");
 		model.addAttribute("active", "3");
 		
 		if (result.hasErrors()) {
@@ -106,63 +113,84 @@ public class AdminController {
 			model.addAttribute("message", "Valid information!");
 		}
 		
-		return "admin/index";
+		return "forward:/admin/index";
 	}
-	
-	
-	@GetMapping("/admin/drink-management")
-	public String getAdminProduct(@Valid @ModelAttribute("drink") Drink drink,
-			@Valid @ModelAttribute("user") User user,
-			BindingResult result, Model model) {
-		model.addAttribute("jsp", "drink-management.jsp");
-		model.addAttribute("active", "5");
+	@GetMapping("/account")
+	public String getUser(Model model, 
+			@ModelAttribute("account") Account account, BindingResult result) {
+		if (result.hasErrors()) {
+			model.addAttribute("message", "Invalid information!");
+		} else {
+			model.addAttribute("message", "Valid information!");
+		}
+		
+		
+		
+		model.addAttribute("pages", accountService.findAll(pageable));
+		model.addAttribute("account", accountService.findAll(pageable).getContent().get(0));
+		model.addAttribute("jsp", "_account.jsp");
+		model.addAttribute("active", "4");
+		return "forward:/admin/index";
+	}
+
+	@PostMapping("/user")
+	public String save(Model model,
+			BindingResult result) {
+		
+		model.addAttribute("jsp", "_user.jsp");
+		model.addAttribute("active", "4");
 		
 		if (result.hasErrors()) {
 			model.addAttribute("message", "Invalid information!");
 		} else {
 			model.addAttribute("message", "Valid information!");
 		}
-		return "admin/index";
-	}
-	@PostMapping("/admin/drink-management")
-	public String postAdminProduct(@Valid @ModelAttribute("drink") Drink drink,
-			@Valid @ModelAttribute("user") User user,
-			BindingResult result, Model model) {
-		model.addAttribute("jsp", "drink-management.jsp");
-		model.addAttribute("active", "5");
-		
-		return "admin/index";
+		return "forward:/admin/index";
 	}
 	
-	@GetMapping("/admin/order-management")
-	public String getAdminOrderManagement(@Valid @ModelAttribute("drink") Drink drink,
-			@Valid @ModelAttribute("user") User user,
-			BindingResult result, Model model) {
-		model.addAttribute("jsp", "order-management.jsp");
-		model.addAttribute("active", "6");
+	@GetMapping("/product")
+	public String getAdminProduct(Model model) {
+		model.addAttribute("product", productService.findAll(pageable).getContent().get(0));
+		model.addAttribute("pages", productService.findAll(pageable));
+		model.addAttribute("jsp", "_product.jsp");
+		model.addAttribute("active", "5");
 		
+		return "forward:/admin/index";
+	}
+	@PostMapping("/product")
+	public String postAdminProduct(Model model, @ModelAttribute("product") Product product, BindingResult result) {
+		model.addAttribute("jsp", "_drink-management.jsp");
+		model.addAttribute("active", "5");
+		
+		return "forward:/admin/index";
+	}
+	
+	@GetMapping("/order-management")
+	public String getAdminOrderManagement(Model model, @ModelAttribute("order") Order order, BindingResult result,
+			@PathVariable("orderId") String orderId) {
 		if (result.hasErrors()) {
 			model.addAttribute("message", "Invalid information!");
 		} else {
 			model.addAttribute("message", "Valid information!");
 		}
-		return "admin/index";
+		
+		System.out.println(orderId);
+		
+		model.addAttribute("jsp", "_order-management.jsp");
+		model.addAttribute("active", "6");
+		return "forward:/admin/index";
 	}
-	@PostMapping("/admin/order-management")
-	public String postAdminOrderManagement(@Valid @ModelAttribute("drink") Drink drink,
-			@Valid @ModelAttribute("user") User user,
-			BindingResult result, Model model) {
-		model.addAttribute("jsp", "order-management.jsp");
+	@PostMapping("/order-management")
+	public String postAdminOrderManagement(BindingResult result, Model model) {
+		model.addAttribute("jsp", "_order-management.jsp");
 		model.addAttribute("active", "6");
 		
-		return "admin/index";
+		return "forward:/admin/index";
 	}
 	
-	@GetMapping("/admin/report")
-	public String getAdminReport(@Valid @ModelAttribute("drink") Drink drink,
-			@Valid @ModelAttribute("user") User user,
-			BindingResult result, Model model) {
-		model.addAttribute("jsp", "report.jsp");
+	@GetMapping("/report")
+	public String getAdminReport(BindingResult result, Model model) {
+		model.addAttribute("jsp", "_report.jsp");
 		model.addAttribute("active", "7");
 		
 		if (result.hasErrors()) {
@@ -170,16 +198,14 @@ public class AdminController {
 		} else {
 			model.addAttribute("message", "Valid information!");
 		}
-		return "admin/index";
+		return "forward:/admin/index";
 	}
-	@PostMapping("/admin/report")
-	public String postAdminReport(@Valid @ModelAttribute("drink") Drink drink,
-			@Valid @ModelAttribute("user") User user,
-			BindingResult result, Model model) {
-		model.addAttribute("jsp", "report.jsp");
+	@PostMapping("/report")
+	public String postAdminReport(BindingResult result, Model model) {
+		model.addAttribute("jsp", "_report.jsp");
 		model.addAttribute("active", "7");
 		
-		return "admin/index";
+		return "forward:/admin/index";
 	}
 }
 

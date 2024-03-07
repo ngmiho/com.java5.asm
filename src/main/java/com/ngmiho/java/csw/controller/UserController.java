@@ -1,5 +1,7 @@
-package com.java5.asm.controller;
+package com.ngmiho.java.csw.controller;
 
+import java.time.LocalDateTime;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,181 +14,132 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.java5.asm.dao.DrinkDAO;
-import com.java5.asm.dao.DrinkImageDAO;
-import com.java5.asm.entity.Drink;
-import com.java5.asm.entity.User;
-import com.java5.asm.service.DrinkService;
-
+import com.ngmiho.java.csw.entity.Account;
+import com.ngmiho.java.csw.entity.Category;
+import com.ngmiho.java.csw.entity.Order;
+import com.ngmiho.java.csw.entity.Product;
+import com.ngmiho.java.csw.service.AccountService;
+import com.ngmiho.java.csw.service.CategoryService;
+import com.ngmiho.java.csw.service.ProductService;
+import com.ngmiho.java.csw.service.impl.CategoryServiceImpl;
+import com.ngmiho.java.csw.util.Data;
 
 import jakarta.validation.Valid;
 
-
-
 @Controller
-public class HomeController {
+public class UserController {
 	
 	@Autowired
-	DrinkDAO drinkDAO;
-	
+	AccountService accountService;
 	@Autowired
-	DrinkImageDAO drinkImageDAO;
-	
+	CategoryService categoryService;
 	@Autowired
-	DrinkService drinkService;
+	ProductService productService;
 	
-	@GetMapping("/index")
-	public String getIndex(Model model, @RequestParam("p") Optional<Integer> p) {
-		Pageable pageable = PageRequest.of(p.orElse(0), 3);
-		Page<Drink> drink =  drinkDAO.findAll(pageable);
-		model.addAttribute("page", drink);
-		model.addAttribute("jsp", "home.jsp");
-		
-		model.addAttribute("DRINK", drinkImageDAO.findAll());
-		model.addAttribute("active", "3");
-		
-		return "index";
+	Pageable pageable = PageRequest.of(0, 10);
+	
+	@GetMapping("/user-index")
+	public String index() {
+		return "layout/user/index";
 	}
-
-	@PostMapping("/index")
-	public String postIndex(Model model) {
-		model.addAttribute("jsp", "home.jsp");
-		model.addAttribute("active", "1");
+	
+	@GetMapping("/home")
+	public String getHome(Model model) {
 		
-		return "index";
+		model.addAttribute("jsp", "_home.jsp");
+		model.addAttribute("title", "Home");
+		model.addAttribute("active", "1");
+		return "forward:/user-index";
+	}
+	
+	@PostMapping("/home")
+	public String postHome(Model model) {
+
+		model.addAttribute("jsp", "_home.jsp");
+		model.addAttribute("active", "1");
+		return "forward:/user-index";
 	}
 	
 	@GetMapping("/best-sell")
-	public String getTodaySpecial(Model model) {
-		model.addAttribute("jsp", "best-sell.jsp");
+	public String getBestSell(Model model) {
+
+		model.addAttribute("jsp", "_best-sell.jsp");
+		model.addAttribute("title", "Best Sell");
 		model.addAttribute("active", "2");
-		
-		return "index";
-	}
-	@PostMapping("/today-special")
-	public String postTodaySpecial(Model model) {
-		model.addAttribute("jsp", "best-sell.jsp");
-		model.addAttribute("active", "2");
-		
-		return "index";
+		return "forward:/user-index";
 	}
 	
-<<<<<<< HEAD
+	@PostMapping("/best-sell")
+	public String postBestSell(Model model) {
 
-=======
-	@GetMapping("/menu")
-	public String getMenu(Model model, @RequestParam("p") Optional<Integer> p) {
-		Pageable pageable = PageRequest.of(p.orElse(0), 6);
-		Page<Drink> drink =  drinkDAO.findAll(pageable);
-		model.addAttribute("page", drink);
-		model.addAttribute("jsp", "menu.jsp");
-		//model.addAttribute("DRINK", drinkService.findAll());
-		model.addAttribute("active", "3");
+		model.addAttribute("jsp", "_best-sell.jsp");
+		model.addAttribute("active", "2");
 		
-		return "index";
+		return "forward:/user-index";
 	}
+	
+	@GetMapping("/menu")
+	public String getMenu(Model model, @RequestParam("category") Optional<String> category) {
+		
+				
+		List<Category> categories = categoryService.findAll();
+		String currentCategory = category.orElse(categories.get(0).getName());
+		for (Category c : categories) {
+			if (c.getName().equals(currentCategory)) {
+				model.addAttribute("pages", (Page<Product>) productService.findByCategoryId(c.getId(), pageable));
+			}
+		}
+		model.addAttribute("categories", categories);
+		model.addAttribute("currentCategory", currentCategory);
+		model.addAttribute("jsp", "_menu.jsp");
+		model.addAttribute("title", "Menu");
+		model.addAttribute("active", "3");
+		return "forward:/user-index";
+	}
+	
 	@PostMapping("/menu")
 	public String postMenu(Model model) {
-		model.addAttribute("jsp", "menu.jsp");
+		
+		
+
+		model.addAttribute("jsp", "_menu.jsp");
 		model.addAttribute("active", "3");
-		
-		return "index";
-	}
->>>>>>> b56529dd428cddab37ec8ac3d206c8487d88ed2f
-	
-	@GetMapping("/contact")
-	public String getContact(Model model) {
-		model.addAttribute("jsp", "contact.jsp");
-		model.addAttribute("active", "4");
-		
-		return "index";
-	}
-	@PostMapping("/contact")
-	public String postContact(Model model) {
-		model.addAttribute("jsp", "contact.jsp");
-		model.addAttribute("active", "4");
-		
-		return "index";
+		return "forward:/user-index";
 	}
 	
 	@GetMapping("/detail")
-	public String getDetail(Model model) {
-		model.addAttribute("jsp", "detail.jsp");
-		model.addAttribute("active", "6");
+	public String getDetail(Model model, @RequestParam("id") Integer id) {
 		
-		return "index";
-	}
-	@PostMapping("/detail")
-	public String postDetail(Model model) {
-		model.addAttribute("jsp", "detail.jsp");
-		model.addAttribute("active", "6");
 		
-		return "index";
+		
+		model.addAttribute("product", productService.findById(id));
+		model.addAttribute("jsp", "_detail.jsp");
+		model.addAttribute("title", "Detail");
+		model.addAttribute("active", "4");
+		return "forward:/user-index";
 	}
 	
-	@RequestMapping("/login")
-	public String rqLogin(@Valid @ModelAttribute("user") User user,
-			BindingResult result, Model model){
-		if (result.hasErrors()) {
-			model.addAttribute("message", "Invalid information!");
-		} else {
-			model.addAttribute("message", "Valid information!");
-			return "admin/index";
-		}
-		return "login";
+	@GetMapping("/contact")
+	public String getContact(Model model) {
+
+		model.addAttribute("jsp", "_contact.jsp");
+		model.addAttribute("title", "Contact");
+		model.addAttribute("active", "4");
+		return "forward:/user-index";
 	}
 	
-	@RequestMapping("/sign-up")
-	public String rqSignUp(@Valid @ModelAttribute("user") User user,
-			BindingResult result, Model model){
-		if (result.hasErrors()) {
-			model.addAttribute("message", "Invalid information!");
-		} else {
-			model.addAttribute("message", "Valid information!");
-		}
-		return "sign-up";
-	}
-	
-	@RequestMapping("/forgot-password")
-	public String rqForgotPassword(@Valid @ModelAttribute("user") User user,
-			BindingResult result, Model model){
-		if (result.hasErrors()) {
-			model.addAttribute("message", "Invalid information!");
-		} else {
-			model.addAttribute("message", "Valid information!");
-		}
-		return "forgot-password";
-	}
-	
-	@GetMapping("/opt")
-	public String getOTP(Model model) {
-		
-		return "otp";
-	}
-	@PostMapping("/otp")
-	public String postOTP(Model model) {
-		
-		return "otp";
-	}
-	@GetMapping("/confirm-otp")
-	public String getConfirmOTP(Model model) {
-		
-		return "otp";
-	}
-	@PostMapping("/confirm-otp")
-	public String postConfirmOTP(@Valid @ModelAttribute("user") User user,
-			BindingResult result, Model model) {
-		
-		return "login";
+	@PostMapping("/contact")
+	public String postContact(Model model) {
+
+		model.addAttribute("jsp", "_contact.jsp");
+		model.addAttribute("active", "4");
+		return "forward:/user-index";
 	}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> b56529dd428cddab37ec8ac3d206c8487d88ed2f
 }
